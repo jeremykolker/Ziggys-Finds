@@ -1,0 +1,22 @@
+.Card {
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .Card {
+    flex-basis: calc(33.33% - 20px);
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  .Card:last-child {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .Card {
+    flex-basis: calc(25% - 20px);
+  }
+}
