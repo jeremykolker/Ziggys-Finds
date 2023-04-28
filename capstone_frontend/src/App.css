@@ -38,13 +38,16 @@ h1 {
 
 /* Form styling */
 form {
-
   background-color: #fff;
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
+.add{
+margin-top: 30px;
+text-align: center;
+}
 .form-group {
   margin-bottom: 1rem;
 }
@@ -85,6 +88,8 @@ form {
 
 /* Card styling */
 .card {
+  overflow: hidden;
+  scroll-behavior: smooth;
   background-color: #fff;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -95,10 +100,11 @@ form {
 .card-row{
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   padding: 10px;
 }
 
-.card-img-top {
+.card-image {
   width: 100%;
   height: 200px;
   object-fit: cover;

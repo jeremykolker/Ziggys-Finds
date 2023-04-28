@@ -7,7 +7,7 @@ const Add = (props) => {
     price: '',
     size: '',
     description: '',
-    photo_url: ''
+    photo: ''
   });
 
   const handleChange = (event) => {

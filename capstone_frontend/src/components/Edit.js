@@ -22,6 +22,10 @@ const Edit = (props) => {
           <input type="text" name="name" value={item.name} onChange={handleChange} />
           <br />
           <br />
+          <label htmlFor="color">Color: </label>
+        <input type="text" name="color" value={item.color} onChange={handleChange} />
+        <br />
+        <br />
           <label htmlFor="description">Description: </label>
           <input type="text" name="description" value={item.description} onChange={handleChange} />
           <br />
@@ -30,8 +34,8 @@ const Edit = (props) => {
           <input type="number" name="price" value={item.price} onChange={handleChange} />
           <br />
           <br />
-          <label htmlFor="image_url">Image URL: </label>
-          <input type="url" name="image_url" value={item.image_url} onChange={handleChange} />
+          <label htmlFor="photo_url">Image URL: </label>
+          <input type="url" name="photo_url" value={item.photo_url} onChange={handleChange} />
           <br />
           <br />
           <input type="submit" />
