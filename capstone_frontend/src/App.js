@@ -104,7 +104,7 @@ const App = () => {
         translateY: [-50, 0],
         opacity: [0, 1],
         easing: 'easeOutExpo',
-        duration: 1500,
+        duration: 5000,
         delay: 500
       });
   
@@ -126,7 +126,7 @@ const App = () => {
         <div className="background-anime">
       <Background />
       </div>
-      <h1 className="title">Ziggys Finds</h1>
+      <h1 className="title">ZIGGYS FINDS</h1>
         
         <Row className="card-row">
           {items.filter(filterItems).map((item) => (

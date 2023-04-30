@@ -1,13 +1,9 @@
 /* Base styling */
 body {
   background-color: #f5f5f5;
-  
-
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.search{
-  text-align: center;
-}
 
 p {
   margin-bottom: 1.5rem;
@@ -26,9 +22,32 @@ h1 {
   font-size: 4rem;
   margin: 0;
 }
+
+h2{
+  font-family: 'Peace and Love Font', sans-serif;
+}
+
 @font-face {
   font-family: 'Peace and Love Outline';
   src: url('/Users/jeremykolker/Downloads/Peace-and-Love-Font-Duo-www.Dfonts.org/Peace and Love Font Duo/3. Outline/Peace and Love Font - Outline.ttf') format('truetype');
+  
+}
+@font-face {
+  font-family: 'Peace and Love Font';
+  src: url('/Users/jeremykolker/Downloads/Peace-and-Love-Font-Duo-www.Dfonts.org/Peace and Love Font Duo/2.Regular/Peace and Love Font.ttf') format('truetype');
+}
+
+
+form {
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.search{
+  text-align: center;
 }
 
 
@@ -36,21 +55,16 @@ h1 {
   font-family: 'Peace and Love Outline', sans-serif;
   font-size: 100px;
   font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Form styling */
-form {
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-}
 
 .add{
 margin-top: 10px;
 text-align: center;
 margin-bottom: 10px;
 }
+
 .form-group {
   margin-bottom: 1rem;
 }
@@ -89,9 +103,7 @@ margin-bottom: 10px;
   background-color: #0069d9;
 }
 
-/* Card styling */
 .card {
-  background-color:#f5f5f5;
   z-index: 99;
   text-align: center;
   display: flex;
