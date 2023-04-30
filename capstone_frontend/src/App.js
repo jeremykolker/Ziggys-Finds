@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import anime from 'animejs/lib/anime.es.js';
 import Add from './components/Add';
 import Edit from './components/Edit';
+import Background from './components/Background'
 import './App.css';
 import { Container, Row, Col, Button, Form, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+
 
 
 const App = () => {
   const [items, setItems] = useState([]);
   const [showForm, setAddForm] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [titleAnimated, setTitleAnimated] = useState(false);
+
 
   // CREATE FUNCTION \\
   const handleCreate = (addItem) => {
@@ -61,6 +66,57 @@ const App = () => {
   };
 
   useEffect(() => {
+    // Define the animation properties
+    const backgroundAnimation = anime({
+      targets: 'body',
+      background: [
+        { value: '#FDB813' },
+        { value: '#E75A7C' },
+        { value: '#A4A4A4' },
+        { value: '#00A6ED' },
+        { value: '#F95700' },
+        { value: '#5A5A5A' },
+        { value: '#6BB130' },
+        { value: '#E4002B' },
+        { value: '#00B7B0' },
+        { value: '#FDB813' },
+        { value: '#E75A7C' },
+        { value: '#A4A4A4' },
+        { value: '#00A6ED' },
+        { value: '#F95700' },
+        { value: '#5A5A5A' },
+        { value: '#6BB130' },
+        { value: '#E4002B' },
+        { value: '#00B7B0' },
+      ],
+      duration: 160000,
+      easing: 'linear',
+      loop: true
+    }); 
+  }, []);
+  
+
+  useEffect(() => {
+    if (!titleAnimated) {
+      // Define the animation properties
+      const titleAnimation = anime({
+        targets: '.title',
+        translateY: [-50, 0],
+        opacity: [0, 1],
+        easing: 'easeOutExpo',
+        duration: 1500,
+        delay: 500
+      });
+  
+      // Set the state variable to true when the animation finishes
+      titleAnimation.finished.then(() => {
+        setTitleAnimated(true);
+      });
+    }
+  }, [titleAnimated]);
+
+
+  useEffect(() => {
     getItems();
   }, []);
 
@@ -68,7 +124,7 @@ const App = () => {
     <>
       <Container className="app-container">
      
-        <h1 className="title">Ziggy's Finds</h1>
+      <h1 className="title">Ziggy's Finds</h1>
         
         <Row className="card-row">
           {items.filter(filterItems).map((item) => (
@@ -115,6 +171,7 @@ const App = () => {
         </div>
     </>
   );
+  
 };
 
 export default App;
