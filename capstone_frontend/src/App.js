@@ -5,16 +5,28 @@ import Add from './components/Add';
 import Edit from './components/Edit';
 import Background from './components/Background'
 import './App.css';
-import { Container, Row, Col, Button, Form, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Container, Row, Col, Collapse, Button, Form, Card, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
 
 
 const App = () => {
+  const [titleAnimated, setTitleAnimated] = useState(false);
   const [items, setItems] = useState([]);
   const [showForm, setAddForm] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [titleAnimated, setTitleAnimated] = useState(false);
+  
 
+  
+  const handleToggle = () => {
+    setShowMenu(!showMenu);
+  };
+
+  const handleOutsideClick = (e) => {
+    if (showMenu && !e.target.closest(".collapsible-nav")) {
+      setShowMenu(false);
+    }
+  };
 
   // CREATE FUNCTION \\
   const handleCreate = (addItem) => {
@@ -89,7 +101,7 @@ const App = () => {
         { value: '#E4002B' },
         { value: '#00B7B0' },
       ],
-      duration: 160000,
+      duration: 100000,
       easing: 'linear',
       loop: true
     }); 
@@ -104,7 +116,7 @@ const App = () => {
         translateY: [-50, 0],
         opacity: [0, 1],
         easing: 'easeOutExpo',
-        duration: 5000,
+        duration: 9000,
         delay: 500
       });
   
@@ -122,12 +134,40 @@ const App = () => {
 
   return (
     <>
-      <Container className="app-container">
-        <div className="background-anime">
-      <Background />
-      </div>
-      <h1 className="title">ZIGGYS FINDS</h1>
+   
+  
+    
+<Container>
+
+<div className="collapsible-nav" onClick={handleOutsideClick}>
+  <Button
+    variant="link"
+    className="nav-toggle"
+    onClick={handleToggle}
+    aria-expanded={showMenu}
+  >
+    <i className="fas fa-bars">≡</i> 
+  </Button>
+  <Collapse in={showMenu}>
+    <div>
+   
+      <Nav>
         
+        <div className="add">
+         
+          {showMenu && <Add handleCreate={handleCreate} />}
+        </div>
+        
+      </Nav>
+    </div>
+  </Collapse>
+</div>
+
+
+     
+ <h1 className="title">ZIGGYS FINDS</h1>
+    
+
         <Row className="card-row">
           {items.filter(filterItems).map((item) => (
             <Col key={item.id} className="card-row">
@@ -155,22 +195,21 @@ const App = () => {
             </Col>
           ))}
         </Row>
-      </Container>
-        <Form.Group className="search" controlId="search">
+        </Container>
+ <footer>
+ <Form.Group className="search" controlId="search">
           <Form.Control
             type="text"
             placeholder="Search"
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}/>
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
         </Form.Group>
-        <div class="add">
-         <button
-          variant="primary"
-          onClick={() => setAddForm(!showForm)}>
-          {showForm ? 'Close Form' : 'Add Item'}
-        </button>
-        {showForm && <Add handleCreate={handleCreate} />}
-        </div>
+
+  <p>ZIGGYS FINDS &copy; 2023</p>
+
+</footer>
+
     </>
   );
   

@@ -17,6 +17,12 @@ header {
   margin-bottom: 1.5rem;
 }
 
+footer, p{
+  text-align: center;
+  font-family: 'love and peace', sans-serif;
+
+}
+
 h1 {
   text-align: center;
   font-size: 4rem;
@@ -24,7 +30,8 @@ h1 {
 }
 
 h2{
-  font-family: 'Peace and Love Font', sans-serif;
+  color: #212529;
+  font-family: 'love and peace', sans-serif;
 }
 
 @font-face {
@@ -33,14 +40,15 @@ h2{
   
 }
 @font-face {
-  font-family: 'Peace and Love Font';
-  src: url('/Users/jeremykolker/Downloads/Peace-and-Love-Font-Duo-www.Dfonts.org/Peace and Love Font Duo/2.Regular/Peace and Love Font.ttf') format('truetype');
+  font-family: 'love and peace';
+  src: url('/Users/jeremykolker/Downloads/love-and-peace-font-1682860705-0/demo-loveandpeace.otf') format('truetype');
 }
 
 
 form {
   margin-top: 10px;
   background-color: #fff;
+  color: #212529;
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
@@ -48,7 +56,9 @@ form {
 
 .search{
   text-align: center;
+  z-index: 99;
 }
+
 
 
 .title {
@@ -83,26 +93,6 @@ margin-bottom: 10px;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
 }
 
-.form-input:focus {
-  outline: none;
-  box-shadow: 0 0 0 0.125rem #007bff;
-}
-
-.form-btn {
-  display: block;
-  width: 100%;
-  padding: 0.5rem;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 0.25rem;
-  transition: background-color 0.2s;
-}
-
-.form-btn:hover {
-  background-color: #0069d9;
-}
-
 .card {
   z-index: 99;
   text-align: center;
@@ -117,6 +107,7 @@ margin-bottom: 10px;
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  
 }
 
 
@@ -125,7 +116,7 @@ margin-bottom: 10px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 5px;
+  padding: 4px;
 }
 
 .card-image {
@@ -143,28 +134,27 @@ margin-bottom: 10px;
   cursor: pointer;
 }
 
-.card-title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
 
 .card-subtitle {
   font-size: 1rem;
   margin-bottom: 1rem;
+  color: #fff;
+  font-family: 'love and peace', sans-serif;
 }
 
-.card-text {
-  margin-bottom: 1rem;
-}
+
 
 .card-price {
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  color: #212529;
 }
 
 .card-size {
+  font-family: 'love and peace', sans-serif;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.rem;
+  color: #fff;
 }
 
 .card-btns {
@@ -186,11 +176,6 @@ margin-bottom: 10px;
   cursor: pointer;
 }
 
-.card-edit-btn {
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-}
 
 #sky {
   width: 100vw;
