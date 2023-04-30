@@ -16,7 +16,7 @@ const Edit = (props) => {
     <>
       <details>
         <br />
-        <summary>Edit Item Info</summary>
+        <summary>Edit</summary>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name: </label>
           <input type="text" name="name" value={item.name} onChange={handleChange} />

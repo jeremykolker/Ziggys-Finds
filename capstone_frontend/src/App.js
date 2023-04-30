@@ -3,14 +3,13 @@ import axios from 'axios';
 import Add from './components/Add';
 import Edit from './components/Edit';
 import './App.css';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
+import { Container, Row, Col, Button, Form, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
 
 const App = () => {
   const [items, setItems] = useState([]);
   const [showForm, setAddForm] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   // CREATE FUNCTION \\
   const handleCreate = (addItem) => {
@@ -46,6 +45,21 @@ const App = () => {
     });
   };
 
+  // FILTER FUNCTION \\
+  const filterItems = (item) => {
+    if (searchTerm === '') {
+      return true;
+    } else if (
+      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.color.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchTerm.toLowerCase())
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   useEffect(() => {
     getItems();
   }, []);
@@ -53,9 +67,11 @@ const App = () => {
   return (
     <>
       <Container className="app-container">
-        <h1 className="app-title">Ziggy's Wondrous Finds</h1>
+     
+        <h1 className="title">Ziggy's Finds</h1>
+        
         <Row className="card-row">
-          {items.map((item) => (
+          {items.filter(filterItems).map((item) => (
             <Col key={item.id} className="card-row">
               <div className="card">
               <img className="card-image" src={item.photo_url} alt={item.photo_url} />
@@ -67,11 +83,11 @@ const App = () => {
                   <p className="card-size">{item.size}</p>
                   <div className="card-buttons">
                     <Edit handleUpdate={handleUpdate} item={item} />
+                    <br></br>
                     <Button
                       variant="danger"
                       onClick={handleDelete}
                       value={item.id}
-                
                     >
                       X
                     </Button>
@@ -82,11 +98,17 @@ const App = () => {
           ))}
         </Row>
       </Container>
-      <div class="add">
+        <Form.Group className="search" controlId="search">
+          <Form.Control
+            type="text"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}/>
+        </Form.Group>
+        <div class="add">
          <button
           variant="primary"
-          onClick={() => setAddForm(!showForm)}
-        >
+          onClick={() => setAddForm(!showForm)}>
           {showForm ? 'Close Form' : 'Add Item'}
         </button>
         {showForm && <Add handleCreate={handleCreate} />}
