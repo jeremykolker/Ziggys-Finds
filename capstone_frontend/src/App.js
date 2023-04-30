@@ -123,8 +123,10 @@ const App = () => {
   return (
     <>
       <Container className="app-container">
-     
-      <h1 className="title">Ziggy's Finds</h1>
+        <div className="background-anime">
+      <Background />
+      </div>
+      <h1 className="title">Ziggys Finds</h1>
         
         <Row className="card-row">
           {items.filter(filterItems).map((item) => (

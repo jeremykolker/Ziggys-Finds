@@ -1,46 +1,8 @@
 /* Base styling */
 body {
   background-color: #f5f5f5;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  background: linear-gradient(to right, #ff47a1 0%, #ff9f4d 100%);
-  margin: 0;
-}
+  
 
-
-#sky {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-#shootingstars {
-  margin: 0;
-  padding: 0;
-  width: 150vh;
-  height: 100vw;
-  position: fixed;
-  overflow: hidden;
-  transform: translatex(calc(50vw - 50%)) translatey(calc(50vh - 50%))
-    rotate(120deg);
-}
-
-.wish {
-  height: 2px;
-  top: 300px;
-  width: 100px;
-  margin: 0;
-  opacity: 0;
-  padding: 0;
-  background-color: white;
-  position: absolute;
-  background: linear-gradient(-45deg, white, rgba(0, 0, 255, 0));
-  filter: drop-shadow(0 0 6px white);
-  overflow: hidden;
 }
 
 .search{
@@ -63,6 +25,17 @@ h1 {
   text-align: center;
   font-size: 4rem;
   margin: 0;
+}
+@font-face {
+  font-family: 'Peace and Love Outline';
+  src: url('/Users/jeremykolker/Downloads/Peace-and-Love-Font-Duo-www.Dfonts.org/Peace and Love Font Duo/3. Outline/Peace and Love Font - Outline.ttf') format('truetype');
+}
+
+
+.title {
+  font-family: 'Peace and Love Outline', sans-serif;
+  font-size: 100px;
+  font-weight: bold;
 }
 
 /* Form styling */
@@ -118,7 +91,9 @@ margin-bottom: 10px;
 
 /* Card styling */
 .card {
-text-align: center;
+  background-color:#f5f5f5;
+  z-index: 99;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -203,4 +178,38 @@ text-align: center;
   background-color: #007bff;
   color: #fff;
   cursor: pointer;
+}
+
+#sky {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#shootingstars {
+  margin: 0;
+  padding: 0;
+  width: 150vh;
+  height: 100vw;
+  position: fixed;
+  overflow: hidden;
+  transform: translatex(calc(50vw - 50%)) translatey(calc(50vh - 50%))
+    rotate(120deg);
+}
+
+.wish {
+  height: 2px;
+  top: 300px;
+  width: 100px;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  background-color: white;
+  position: absolute;
+  background: linear-gradient(-45deg, white, rgba(0, 0, 255, 0));
+  filter: drop-shadow(0 0 6px white);
+  overflow: hidden;
 }
