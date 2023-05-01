@@ -28,7 +28,7 @@ h1 {
 
 h2{
   color: #212529;
-  font-family: 'Peace and Love Outline';
+  font-family: 'love and peace', sans-serif;
 }
 
 @font-face {
@@ -234,6 +234,10 @@ margin-bottom: 10px;
   font-size: 100px;
   padding: 5px;
   margin-bottom: 30px;
-  font-family: 'love and peace', sans-serif;
+  font-family: 'Peace and Love Outline', sans-serif;
+  font-display: --p-font-weight-bold;
+ 
+  
+  
 }
 
