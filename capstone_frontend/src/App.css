@@ -173,6 +173,12 @@ margin-bottom: 10px;
   cursor: pointer;
 }
 
+.collapsible-nav {
+  margin-right: 300px;
+  margin-left: 20px;
+ 
+}
+
 
 #sky {
   width: 100vw;
@@ -206,4 +212,18 @@ margin-bottom: 10px;
   background: linear-gradient(-45deg, white, rgba(0, 0, 255, 0));
   filter: drop-shadow(0 0 6px white);
   overflow: hidden;
+}
+
+
+.sort-buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+ 
 }

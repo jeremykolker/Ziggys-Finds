@@ -15,6 +15,8 @@ const App = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [showBackground, setShowBackground] = useState(false);
+  const [sortBy, setSortBy] = useState('name');
+  const [sortOrder, setSortOrder] = useState('asc');
 
   const toggleBackground = () => {
     setShowBackground(!showBackground);
@@ -81,6 +83,34 @@ const App = () => {
     }
   };
 
+  // SORT FUNCTIONS \\
+  const handleSort = (sortType) => {
+    if (sortBy === sortType) {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortBy(sortType);
+      setSortOrder('asc');
+    }
+  };
+
+  const sortItems = (a, b) => {
+    const sortFunc =
+      sortBy === 'name'
+        ? (a, b) => a.name.localeCompare(b.name)
+        : (a, b) => a.price - b.price;
+
+    if (sortOrder === 'asc') {
+      return sortFunc(a, b);
+    } else {
+      return sortFunc(b, a);
+    }
+  };
+
+  const filteredAndSortedItems = items
+  .filter(filterItems)
+  .sort((a, b) => sortItems(a, b));
+
+
   useEffect(() => {
  
     const backgroundAnimation = anime({
@@ -143,8 +173,7 @@ return (
     variant="link"
     className="nav-toggle"
     onClick={handleToggle}
-    aria-expanded={showMenu}
-  >
+    aria-expanded={showMenu} >
     <i className="fas fa-bars">≡</i> 
   </Button>
   <Collapse in={showMenu}>
@@ -157,9 +186,19 @@ return (
     </div>
   </Collapse>
 </div>
+
+<div className="sort-buttons">
+  <button onClick={() => handleSort('name')}>
+    Sort by Name {sortBy === 'name' && (sortOrder === 'asc' ? '▲' : '▼')}
+  </button>
+  <button onClick={() => handleSort('price')}>
+    Sort by Price {sortBy === 'price' && (sortOrder === 'asc' ? '▲' : '▼')}
+  </button>
+</div>
+
  <h1 className="title">ZIGGYS FINDS</h1>
         <Row className="card-row">
-          {items.filter(filterItems).map((item) => (
+        {filteredAndSortedItems.map((item) => (
             <Col key={item.id} className="card-row">
               <div className="card">
               <img className="card-image" src={item.photo_url} alt={item.photo_url} />
