@@ -28,7 +28,7 @@ h1 {
 
 h2{
   color: #212529;
-  font-family: 'love and peace', sans-serif;
+  font-family: 'Peace and Love Outline';
 }
 
 @font-face {
@@ -133,10 +133,11 @@ margin-bottom: 10px;
 
 
 .card-subtitle {
+  font-family: 'Peace and Love Outline';
   font-size: 1rem;
   margin-bottom: 1rem;
   color: #fff;
-  font-family: 'love and peace', sans-serif;
+  
 }
 
 
@@ -227,3 +228,12 @@ margin-bottom: 10px;
   cursor: pointer;
  
 }
+
+.letter {
+  display: inline-block;
+  font-size: 100px;
+  padding: 5px;
+  margin-bottom: 30px;
+  font-family: 'love and peace', sans-serif;
+}
+

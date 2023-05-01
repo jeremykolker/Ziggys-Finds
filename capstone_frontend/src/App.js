@@ -110,6 +110,19 @@ const App = () => {
   .filter(filterItems)
   .sort((a, b) => sortItems(a, b));
 
+  const animation = anime({
+    targets: '.letter',
+    opacity: 1,
+    translateY: 50,
+    rotate: {
+      value: 360,
+      duration: 9000,
+      easing: 'easeInExpo'
+    },
+    scale: anime.stagger([0.7, 1], {from: 'center'}),
+    delay: anime.stagger(100, {start: 1000}),
+    translateX: [-10, 30]
+  });
 
   useEffect(() => {
  
@@ -150,8 +163,8 @@ const App = () => {
         translateY: [-50, 0],
         opacity: [0, 1],
         easing: 'easeOutExpo',
-        duration: 9000,
-        delay: 500
+        duration: 15000,
+        delay: 1000
       });
       titleAnimation.finished.then(() => {
         setTitleAnimated(true);
@@ -196,7 +209,21 @@ return (
   </button>
 </div>
 
- <h1 className="title">ZIGGYS FINDS</h1>
+ <h1 className="title"><h1>
+<span class="letter">Z</span>
+<span class="letter">I</span>
+<span class="letter">G</span>
+<span class="letter">G</span>
+<span class="letter">Y</span>
+<span class="letter">S</span>
+<div></div>
+<div></div>
+<span class="letter">F</span>
+<span class="letter">I</span>
+<span class="letter">N</span>
+<span class="letter">D</span>
+<span class="letter">S</span>
+</h1></h1>
         <Row className="card-row">
         {filteredAndSortedItems.map((item) => (
             <Col key={item.id} className="card-row">
@@ -225,6 +252,7 @@ return (
           ))}
         </Row>
         </Container>
+
  <Form.Group className="search" controlId="search">
           <Form.Control
             type="text"
