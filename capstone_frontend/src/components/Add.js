@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Background from './Background';
+
 
 const Add = (props) => {
   const [item, setItem] = useState({
@@ -9,6 +11,20 @@ const Add = (props) => {
     description: '',
     photo: ''
   });
+
+  const [showBackground, setShowBackground] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+
+
+  const toggleBackground = () => {
+    setShowBackground(!showBackground);
+  };
+  
+
+  
+  const handleToggle = () => {
+    setShowMenu(!showMenu);
+  };
 
   const handleChange = (event) => {
     setItem({ ...item, [event.target.name]: event.target.value });
@@ -36,6 +52,7 @@ const Add = (props) => {
 
   return (
     <>
+  
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name: </label>
         <input type="text" name="name" value={item.name} onChange={handleChange} />
@@ -67,6 +84,11 @@ const Add = (props) => {
         <br />
         <br />
         <input type="submit" />
+        <div>
+          <br></br>
+      <button onClick={toggleBackground}>Stargaze</button>
+      {showBackground && <Background />}
+    </div>
       </form>
     </>
   );

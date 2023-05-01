@@ -3,7 +3,6 @@ import axios from 'axios';
 import anime from 'animejs/lib/anime.es.js';
 import Add from './components/Add';
 import Edit from './components/Edit';
-import Background from './components/Background'
 import './App.css';
 import { Container, Row, Col, Collapse, Button, Form, Card, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
@@ -15,6 +14,11 @@ const App = () => {
   const [showForm, setAddForm] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [showBackground, setShowBackground] = useState(false);
+
+  const toggleBackground = () => {
+    setShowBackground(!showBackground);
+  };
   
 
   
@@ -78,7 +82,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    // Define the animation properties
+ 
     const backgroundAnimation = anime({
       targets: 'body',
       background: [
@@ -110,7 +114,7 @@ const App = () => {
 
   useEffect(() => {
     if (!titleAnimated) {
-      // Define the animation properties
+    
       const titleAnimation = anime({
         targets: '.title',
         translateY: [-50, 0],
@@ -119,24 +123,19 @@ const App = () => {
         duration: 9000,
         delay: 500
       });
-  
-      // Set the state variable to true when the animation finishes
       titleAnimation.finished.then(() => {
         setTitleAnimated(true);
       });
     }
   }, [titleAnimated]);
 
-
   useEffect(() => {
     getItems();
   }, []);
 
-  return (
+return (
     <>
-   
   
-    
 <Container>
 
 <div className="collapsible-nav" onClick={handleOutsideClick}>
@@ -150,24 +149,15 @@ const App = () => {
   </Button>
   <Collapse in={showMenu}>
     <div>
-   
       <Nav>
-        
         <div className="add">
-         
           {showMenu && <Add handleCreate={handleCreate} />}
         </div>
-        
       </Nav>
     </div>
   </Collapse>
 </div>
-
-
-     
  <h1 className="title">ZIGGYS FINDS</h1>
-    
-
         <Row className="card-row">
           {items.filter(filterItems).map((item) => (
             <Col key={item.id} className="card-row">
@@ -196,7 +186,6 @@ const App = () => {
           ))}
         </Row>
         </Container>
- <footer>
  <Form.Group className="search" controlId="search">
           <Form.Control
             type="text"
@@ -205,14 +194,11 @@ const App = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </Form.Group>
-
+  <footer>
   <p>ZIGGYS FINDS &copy; 2023</p>
-
-</footer>
-
+  </footer>
     </>
   );
-  
 };
 
 export default App;
