@@ -125,7 +125,6 @@ const App = () => {
   });
 
   useEffect(() => {
- 
     const backgroundAnimation = anime({
       targets: 'body',
       background: [
@@ -163,7 +162,7 @@ const App = () => {
         translateY: [-50, 0],
         opacity: [0, 1],
         easing: 'easeOutExpo',
-        duration: 15000,
+        duration: 30000,
         delay: 1000
       });
       titleAnimation.finished.then(() => {
