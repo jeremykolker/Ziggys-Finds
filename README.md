@@ -1,32 +1,3 @@
-gt43
-3t4gh35h5yhwqtwerg
-34tg34tg34th34tgtg
-ewrgeg
-rthrth
-wqefgtwhytrthegwq
-wergwergergreythrthrth
-wergwerg
-wergwerg
-wetrhgeyyterwhtegqgeg
-retherhretsdgwetgwtg
-34tgh4t3hrehrethrth
-werhweh
-ewrgwerg
-rterth
-ewrgh
-ryhryreherthrth
-6yh6yh
-43th5th43ertw
-354ht35ht5tg34tg
-43tth5553yt4hewrt
-35t4hgr
-35ht4w53ht4egrw53h5y3hgt4erwq4y5t3rewg
-ertgrethehergrth
-rtherwet
-erhyh
-reyhijnrginjrtgjnmrtg
- kwertw
- kmerg
 "Ziggy's Finds" is a Full-Stack Web Application,
 built and created by Jeremy Kolker 
 
