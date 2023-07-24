@@ -1,5 +1,5 @@
 
-"Ziggy's Finds" is a Full-Stack Web Application,
+"Ziggy's Finds" is a Full-Stack Web Application,,
 built and created by Jeremy Kolker 
 
 A personalizable e-commerce store with an engaging, interactive user-interface. 
